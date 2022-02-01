@@ -1,0 +1,33 @@
+CREATE TABLE customers(
+customer_id int PRIMARY KEY,
+last_name char[20],
+first_name char[20],
+fav_website char[30]
+);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website)
+VALUES (1,"Sharma", "Amisha", "Algoexpert.io");
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website)
+VALUES (2,"Grover", "Aarohi", "Cartoonnetwork.com");
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website)
+VALUES (3,"Sharma", "Lavi", "Youtube.com");
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website)
+VALUES (4,"Singh", "Ranvir", "Algoexpert.io");
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website)
+VALUES (5,"Sharma", "Tanuj", "Bitcoin.com");
+-------------------------------------
+SELECT * FROM customers;
+-------------------------------------
+SELECT last_name FROM customers;
+-------------------------------------
+SELECT DISTINCT last_name FROM customers;
+-------------------------------------
+SELECT COUNT(DISTINCT last_name) FROM customers;
+-------------------------------------
+SELECT COUNT(*) 
+FROM (SELECT DISTINCT last_name FROM customers);
+-------------------------------------
