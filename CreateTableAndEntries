@@ -1,0 +1,17 @@
+CREATE TABLE student(
+ID int PRIMARY KEY,
+Name char[20],
+Age int,
+State char[15]
+);
+
+INSERT INTO student(ID, Name, Age, State)
+VALUES (1,"Amisha", 24, "Uttar Pradesh");
+
+INSERT INTO student(ID, Name, Age, State)
+VALUES (2,"Lavi", 20, "Uttar Pradesh");
+
+INSERT INTO student(ID, Name, Age, State)
+VALUES (3,"Tanuj", 26, "Uttar Pradesh");
+
+SELECT * FROM student;
