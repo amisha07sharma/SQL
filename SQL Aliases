@@ -32,11 +32,7 @@ SELECT phone AS phone_number FROM customers;
 ----------------------------------------------------
 SELECT phone FROM customers AS phone_number;
 ----------------------------------------------------
-
+SELECT CONCAT(first_name ,' ' , last_name) AS name FROM customers;
 ----------------------------------------------------
+SELECT c.phone AS phone_number FROM customers AS c;
 
-----------------------------------------------------
-
-----------------------------------------------------
-
-----------------------------------------------------
