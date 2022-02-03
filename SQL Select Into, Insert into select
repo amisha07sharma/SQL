@@ -42,3 +42,6 @@ person_age int,
 INSERT INTO Persons(person_id, person_name, person_age)
 SELECT patient_id, patient_name, patient_age FROM Patients;
 ----------------------------------------------
+INSERT INTO Persons(person_id, person_name, person_age)
+SELECT patient_id, patient_name, patient_age FROM Patients
+WHERE patient_age > 20;
