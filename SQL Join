@@ -26,3 +26,37 @@ VALUES (6, NULL, "Vikram", "Shaadi.com", 43);
 
 INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
 VALUES (7, "Khan", NULL, "Bollywood.com", 32);
+
+CREATE TABLE orders(
+order_id int PRIMARY KEY,
+customer_id int,
+order_name char[30]
+);
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(1,1,"Apple");
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(2,1,"Biscuits");
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(3,3,"Pen");
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(4,2,"Apple");
+
+--------------------------------------------------
+SELECT customers.customer_id, orders.order_id, customers.last_name, orders.order_name
+FROM orders
+INNER JOIN customers ON orders.customer_id=customers.customer_id;
+--------------------------------------------------
+SELECT customers.customer_id, orders.order_id, customers.last_name, orders.order_name
+FROM customers
+INNER JOIN orders ON orders.customer_id=customers.customer_id
+--------------------------------------------------
+
+--------------------------------------------------
+
+--------------------------------------------------
+
+--------------------------------------------------
