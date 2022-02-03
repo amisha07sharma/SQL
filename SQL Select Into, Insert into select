@@ -30,7 +30,15 @@ SELECT * INTO Backup FROM Patients
 WHERE 1 = 0;
 // Just to create an empty table with same schema
 ----------------------------------------------
-
+INSERT INTO PatientsBackup(patient_id, patient_name, patient_age, patient_disease)
+SELECT * FROM Patients;
 ----------------------------------------------
+CREATE TABLE Person(
+person_id int PRIMARY KEY,
+person_name char[30],
+person_age int,
+);
 
+INSERT INTO Persons(person_id, person_name, person_age)
+SELECT patient_id, patient_name, patient_age FROM Patients;
 ----------------------------------------------
