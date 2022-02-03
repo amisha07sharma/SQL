@@ -1,0 +1,64 @@
+CREATE TABLE customers(
+customer_id int PRIMARY KEY,
+last_name char[20],
+first_name char[20],
+fav_website char[30],
+phone int
+);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (1,"Sharma", "Amisha", "Algoexpert.io", 10);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (2,"Grover", "Aarohi", "Cartoonnetwork.com",11);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (3,"Sharma", "Lavi", "Youtube.com",11);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (4,"Singh", "Ranvir", "Algoexpert.io", 90);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (5,"Sharma", "Tanuj", "Bitcoin.com", 55);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (6, NULL, "Vikram", "Shaadi.com", 43);
+
+INSERT INTO customers(customer_id, last_name, first_name, fav_website, phone)
+VALUES (7, "Khan", NULL, "Bollywood.com", 32);
+
+CREATE TABLE orders(
+order_id int PRIMARY KEY,
+customer_id int,
+order_name char[30]
+);
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(1,1,"Apple");
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(2,1,"Biscuits");
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(3,3,"Pen");
+
+INSERT INTO orders(order_id, customer_id, order_name)
+VALUES(4,2,"Apple");
+
+-----------------------------------------------
+SELECT MIN(phone), last_name FROM customers
+GROUP BY last_name;
+-----------------------------------------------
+SELECT COUNT(phone), last_name FROM customers
+GROUP BY last_name;
+-----------------------------------------------
+
+-----------------------------------------------
+
+-----------------------------------------------
+
+-----------------------------------------------
+
+-----------------------------------------------
+
+-----------------------------------------------
