@@ -1,0 +1,36 @@
+CREATE TABLE Patients(
+patient_id int PRIMARY KEY,
+patient_name char[30],
+patient_age int,
+patient_disease char[50]
+);
+
+INSERT INTO Patients(patient_id, patient_name, patient_age, patient_disease)
+VALUES (1, "Sushma", 67, "Fever");
+
+INSERT INTO Patients(patient_id, patient_name, patient_age, patient_disease)
+VALUES (2, "Kartik", 33, "Typhoid");
+
+INSERT INTO Patients(patient_id, patient_name, patient_age, patient_disease)
+VALUES (3, "Ravi", 12, "Coldr");
+
+INSERT INTO Patients(patient_id, patient_name, patient_age, patient_disease)
+VALUES (4, "Monika", 45, "Fever");
+
+----------------------------------------------
+SELECT * INTO Backup FROM Patients;
+SELECT * FROM Backup;
+----------------------------------------------
+SELECT * INTO Backup IN "path" FROM Patients;
+----------------------------------------------
+SELECT * INTO Backup FROM Patients 
+WHERE patient_disease = "Fever";
+----------------------------------------------
+SELECT * INTO Backup FROM Patients 
+WHERE 1 = 0;
+// Just to create an empty table with same schema
+----------------------------------------------
+
+----------------------------------------------
+
+----------------------------------------------
