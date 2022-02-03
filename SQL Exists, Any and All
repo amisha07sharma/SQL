@@ -64,5 +64,13 @@ WHERE customer_id = ALL
   (SELECT order_id
   FROM orders);
 ----------------------------------------------------------------------
-
+SELECT first_name
+FROM customers
+WHERE customer_id = ALL
+  (SELECT order_id
+  FROM orders
+  WHERE order_id > 1);
 ----------------------------------------------------------------------
+SELECT ALL first_name
+FROM customers
+WHERE customer_id >1;
