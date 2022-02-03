@@ -52,13 +52,34 @@ GROUP BY last_name;
 SELECT COUNT(phone), last_name FROM customers
 GROUP BY last_name;
 -----------------------------------------------
-
+SELECT customers.last_name, COUNT(orders.order_id) AS NumberOfOrders
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id
+GROUP BY last_name;
 -----------------------------------------------
-
+SELECT COUNT(last_name), fav_website
+FROM customers
+GROUP BY fav_website
+HAVING COUNT(last_name)>0 ;
 -----------------------------------------------
-
+SELECT COUNT(last_name), fav_website
+FROM customers
+GROUP BY fav_website
+HAVING COUNT(last_name)<2 ;
 -----------------------------------------------
-
+SELECT MIN(phone), fav_website
+FROM customers
+GROUP BY fav_website
+HAVING MIN(phone)<50 ;
 -----------------------------------------------
-
+SELECT COUNT(orders.order_id), customers.fav_website
+FROM customers
+LEFT JOIN orders ON orders.customer_id = customers.customer_id
+GROUP BY customers.fav_website;
+-----------------------------------------------
+SELECT COUNT(orders.order_id), customers.fav_website
+FROM customers
+LEFT JOIN orders ON orders.customer_id = customers.customer_id
+GROUP BY customers.fav_website
+HAVING COUNT(orders.order_id)>0;
 -----------------------------------------------
