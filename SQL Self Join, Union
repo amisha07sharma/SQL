@@ -53,8 +53,18 @@ WHERE orders.order_id=customers.customer_id
 SELECT customer_id FROM customers
 UNION
 SELECT order_id FROM orders;
+// only distinct
 ---------------------------------------------------------
-
+SELECT customer_id FROM customers
+UNION ALL
+SELECT order_id FROM orders;
+//every
 ---------------------------------------------------------
-
+SELECT customer_id, fav_website FROM customers
+UNION
+SELECT order_id, order_name FROM orders;
+---------------------------------------------------------
+SELECT customer_id, fav_website FROM customers WHERE fav_website = "Algoexpert.io"
+UNION
+SELECT order_id, order_name FROM orders;
 ---------------------------------------------------------
