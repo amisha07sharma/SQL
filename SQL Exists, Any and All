@@ -48,3 +48,21 @@ VALUES(4,2,"Apple");
 ----------------------------------------------------------------------
 SELECT first_name FROM customers
 WHERE EXISTS (SELECT order_name FROM orders WHERE orders.customer_id = customers.customer_id);
+----------------------------------------------------------------------
+SELECT first_name FROM customers
+WHERE EXISTS (SELECT order_name FROM orders WHERE orders.customer_id = customers.customer_id AND order_id > 2);
+----------------------------------------------------------------------
+SELECT first_name
+FROM customers
+WHERE customer_id = ANY
+  (SELECT order_id
+  FROM orders);
+----------------------------------------------------------------------
+SELECT first_name
+FROM customers
+WHERE customer_id = ALL
+  (SELECT order_id
+  FROM orders);
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
