@@ -32,3 +32,11 @@ LIMIT(5)) ;
 Select sum(a.employee_salary) from Employees as a
 join Organizations as b on a.employee_id = b.employee_id
 where b.organization_id = 2;
+
+----------------------------------
+
+SELECT o.organization_id, count(*)
+FROM Organizations as o JOIN OrganizationsHierarchy as oh
+ON o.organization_id = oh.organization_id
+group by o.organization_id
+having oh.organization_id IN (Select organization_id from OrganizationsHierarchy where parent_organization_id = 1);
