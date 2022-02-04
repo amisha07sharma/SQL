@@ -34,6 +34,48 @@ join Organizations as b on a.employee_id = b.employee_id
 where b.organization_id = 2;
 
 ----------------------------------
+//update the organizations table structure and create a new table for parent - child relation
+CREATE TABLE Organizations(
+organization int PRIMARY KEY,
+organization_id int,
+organization_name char[50],
+employee_id int
+);
+
+INSERT INTO Organizations
+VALUES(1, 1, "TCS", 1);
+
+INSERT INTO Organizations
+VALUES(2, 2,  "TPS", 2);
+
+INSERT INTO Organizations
+VALUES(3, 2, "TKS", 3);
+
+INSERT INTO Organizations
+VALUES(4, 3, "TM", 4);
+
+INSERT INTO Organizations
+VALUES(5, 2, "TW", 5);
+
+INSERT INTO Organizations
+VALUES(6, 4, "Xteria", 6);
+
+CREATE TABLE OrganizationsHierarchy(
+organization_id int PRIMARY KEY,
+parent_organization_id int
+);
+
+INSERT INTO OrganizationsHierarchy
+VALUES(2,1);
+
+INSERT INTO OrganizationsHierarchy
+VALUES(3,1);
+
+INSERT INTO OrganizationsHierarchy
+VALUES(4,1);
+
+INSERT INTO OrganizationsHierarchy
+VALUES(5,1);
 
 SELECT o.organization_id, count(*)
 FROM Organizations as o JOIN OrganizationsHierarchy as oh
