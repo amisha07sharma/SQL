@@ -35,6 +35,30 @@ where b.organization_id = 2;
 
 ----------------------------------
 //update the organizations table structure and create a new table for parent - child relation
+CREATE TABLE Employees(
+employee_name char[30],
+employee_id int PRIMARY KEY,
+employee_salary int
+);
+
+INSERT INTO Employees
+VALUES ("Amisha", 1, 100);
+
+INSERT INTO Employees
+VALUES ("Manisha", 2, 140);
+
+INSERT INTO Employees
+VALUES ("Tanuj", 3, 200);
+
+INSERT INTO Employees
+VALUES ("Kapil", 4, 50);
+
+INSERT INTO Employees
+VALUES ("Akasa", 5, 109);
+
+INSERT INTO Employees
+VALUES ("Akshay", 6, 40);
+
 CREATE TABLE Organizations(
 organization int PRIMARY KEY,
 organization_id int,
