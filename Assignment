@@ -26,3 +26,9 @@ SELECT MIN(employee_salary)
 FROM (SELECT employee_salary FROM Employees
 ORDER BY employee_salary DESC
 LIMIT(5)) ;
+
+-----------------------------
+
+Select sum(a.employee_salary) from Employees as a
+join Organizations as b on a.employee_id = b.employee_id
+where b.organization_id = 2;
