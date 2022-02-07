@@ -145,8 +145,8 @@ VALUES(1, "Parent 1");
 INSERT INTO ParentOrganizations
 VALUES(2,"Parent 2");
 
-SELECT o.organization_id, count(*)
-FROM Organizations as o JOIN OrganizationsHierarchy as oh
-ON o.organization_id = oh.organization_id
-group by o.organization_id
-having oh.organization_id IN (Select organization_id from OrganizationsHierarchy where parent_organization_id = 1);
+SELECT o.organization_id, count(e.employee_id)
+FROM Employees AS e
+JOIN Organizations AS o ON e.employee_organization_id = o.organization_id
+GROUP BY o.organization_id
+HAVING o.parent_organization_id = 1;
