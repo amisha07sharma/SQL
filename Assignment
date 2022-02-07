@@ -53,29 +53,28 @@ INSERT INTO Employees
 VALUES ("Akshay", 6, 40);
 
 CREATE TABLE Organizations(
-organization int PRIMARY KEY,
-organization_id int,
+organization_id int PRIMARY KEY,
+parent_organization_id int
 organization_name char[50],
-employee_id int
 );
 
 INSERT INTO Organizations
-VALUES(1, 1, "TCS", 1);
+VALUES(1, 1, "TCS");
 
 INSERT INTO Organizations
-VALUES(2, 2,  "TPS", 2);
+VALUES(2, 1,  "TPS");
 
 INSERT INTO Organizations
-VALUES(3, 2, "TKS", 3);
+VALUES(3, 1, "TKS");
 
 INSERT INTO Organizations
-VALUES(4, 3, "TM", 4);
+VALUES(4, 2, "TM");
 
 INSERT INTO Organizations
-VALUES(5, 2, "TW", 5);
+VALUES(5, 2, "TW");
 
 INSERT INTO Organizations
-VALUES(6, 4, "Xteria", 6);
+VALUES(6, 1, "Xteria");
 
 Select sum(a.employee_salary) from Employees as a
 join Organizations as b on a.employee_id = b.employee_id
@@ -108,29 +107,28 @@ INSERT INTO Employees
 VALUES ("Akshay", 6, 40);
 
 CREATE TABLE Organizations(
-organization int PRIMARY KEY,
-organization_id int,
+organization_id int PRIMARY KEY,
+parent_organization_id int
 organization_name char[50],
-employee_id int
 );
 
 INSERT INTO Organizations
-VALUES(1, 1, "TCS", 1);
+VALUES(1, 1, "TCS");
 
 INSERT INTO Organizations
-VALUES(2, 2,  "TPS", 2);
+VALUES(2, 1,  "TPS");
 
 INSERT INTO Organizations
-VALUES(3, 2, "TKS", 3);
+VALUES(3, 1, "TKS");
 
 INSERT INTO Organizations
-VALUES(4, 3, "TM", 4);
+VALUES(4, 2, "TM");
 
 INSERT INTO Organizations
-VALUES(5, 2, "TW", 5);
+VALUES(5, 2, "TW");
 
 INSERT INTO Organizations
-VALUES(6, 4, "Xteria", 6);
+VALUES(6, 1, "Xteria");
 
 CREATE TABLE ParentOrganizations(
 parent_organization_id int PRIMARY KEY,
