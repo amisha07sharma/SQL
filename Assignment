@@ -2,25 +2,26 @@ CREATE TABLE Employees(
 employee_name char[30],
 employee_id int PRIMARY KEY,
 employee_salary int
+employee_organization_id int
 );
 
 INSERT INTO Employees
-VALUES ("Amisha", 1, 100);
+VALUES ("Amisha", 1, 100, 1);
 
 INSERT INTO Employees
-VALUES ("Manisha", 2, 140);
+VALUES ("Manisha", 2, 140, 2);
 
 INSERT INTO Employees
-VALUES ("Tanuj", 3, 200);
+VALUES ("Tanuj", 3, 200, 2);
 
 INSERT INTO Employees
-VALUES ("Kapil", 4, 50);
+VALUES ("Kapil", 4, 50, 3);
 
 INSERT INTO Employees
-VALUES ("Akasa", 5, 109);
+VALUES ("Akasa", 5, 109, 3);
 
 INSERT INTO Employees
-VALUES ("Akshay", 6, 40);
+VALUES ("Akshay", 6, 40, 3);
 
 SELECT MIN(employee_salary)
 FROM (SELECT employee_salary FROM Employees
@@ -28,29 +29,31 @@ ORDER BY employee_salary DESC
 LIMIT(5)) ;
 
 -----------------------------
+
 CREATE TABLE Employees(
 employee_name char[30],
 employee_id int PRIMARY KEY,
 employee_salary int
+employee_organization_id int
 );
 
 INSERT INTO Employees
-VALUES ("Amisha", 1, 100);
+VALUES ("Amisha", 1, 100, 1);
 
 INSERT INTO Employees
-VALUES ("Manisha", 2, 140);
+VALUES ("Manisha", 2, 140, 2);
 
 INSERT INTO Employees
-VALUES ("Tanuj", 3, 200);
+VALUES ("Tanuj", 3, 200, 2);
 
 INSERT INTO Employees
-VALUES ("Kapil", 4, 50);
+VALUES ("Kapil", 4, 50, 3);
 
 INSERT INTO Employees
-VALUES ("Akasa", 5, 109);
+VALUES ("Akasa", 5, 109, 3);
 
 INSERT INTO Employees
-VALUES ("Akshay", 6, 40);
+VALUES ("Akshay", 6, 40, 3);
 
 CREATE TABLE Organizations(
 organization_id int PRIMARY KEY,
@@ -81,30 +84,31 @@ join Organizations as b on a.employee_id = b.employee_id
 where b.organization_id = 2;
 
 ----------------------------------
-//update the organizations table structure and create a new table for parent - child relation
+
 CREATE TABLE Employees(
 employee_name char[30],
 employee_id int PRIMARY KEY,
 employee_salary int
+employee_organization_id int
 );
 
 INSERT INTO Employees
-VALUES ("Amisha", 1, 100);
+VALUES ("Amisha", 1, 100, 1);
 
 INSERT INTO Employees
-VALUES ("Manisha", 2, 140);
+VALUES ("Manisha", 2, 140, 2);
 
 INSERT INTO Employees
-VALUES ("Tanuj", 3, 200);
+VALUES ("Tanuj", 3, 200, 2);
 
 INSERT INTO Employees
-VALUES ("Kapil", 4, 50);
+VALUES ("Kapil", 4, 50, 3);
 
 INSERT INTO Employees
-VALUES ("Akasa", 5, 109);
+VALUES ("Akasa", 5, 109, 3);
 
 INSERT INTO Employees
-VALUES ("Akshay", 6, 40);
+VALUES ("Akshay", 6, 40, 3);
 
 CREATE TABLE Organizations(
 organization_id int PRIMARY KEY,
