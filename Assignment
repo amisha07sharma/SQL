@@ -79,9 +79,9 @@ VALUES(5, 2, "TW");
 INSERT INTO Organizations
 VALUES(6, 1, "Xteria");
 
-Select sum(a.employee_salary) from Employees as a
-join Organizations as b on a.employee_id = b.employee_id
-where b.organization_id = 2;
+SELECT SUM(employee_salary)
+FROM Employees
+WHERE employee_organization_id = 2;
 
 ----------------------------------
 
