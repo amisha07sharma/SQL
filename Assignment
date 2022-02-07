@@ -132,22 +132,16 @@ VALUES(5, 2, "TW", 5);
 INSERT INTO Organizations
 VALUES(6, 4, "Xteria", 6);
 
-CREATE TABLE OrganizationsHierarchy(
-organization_id int PRIMARY KEY,
-parent_organization_id int
+CREATE TABLE ParentOrganizations(
+parent_organization_id int PRIMARY KEY,
+parent_organization_name char[50]
 );
 
-INSERT INTO OrganizationsHierarchy
-VALUES(2,1);
+INSERT INTO ParentOrganizations
+VALUES(1, "Parent 1");
 
-INSERT INTO OrganizationsHierarchy
-VALUES(3,1);
-
-INSERT INTO OrganizationsHierarchy
-VALUES(4,1);
-
-INSERT INTO OrganizationsHierarchy
-VALUES(5,1);
+INSERT INTO ParentOrganizations
+VALUES(2,"Parent 2");
 
 SELECT o.organization_id, count(*)
 FROM Organizations as o JOIN OrganizationsHierarchy as oh
